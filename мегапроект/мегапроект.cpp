@@ -3,147 +3,194 @@
 #include <cmath>
 #include <string>
 using namespace std;
-//-------------------------------------------------------------------------------------------------
-//Ввод и вывод данных
 
-int fullbegin(int choice) {
+int Begin(int choice);
+int Integer(int choice);
+int Boolean(int choice);
+
+int main(bool error) {
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    int choice, buffer = 0;
+
+    cout << "===Ввод и вывод данных===" << endl;
+    for (int i = 1; i <= 10; i++) {
+        cout << "    " << i << ". Begin-" << i << endl;
+    }
+    cout << "\n===Целые числа===" << endl;
+    for (int i = 11; i <= 36; i++) {
+        buffer += 1;
+        cout << "    " << i << ". Integer-" << buffer << endl;
+    }
+    cout << "    " << "35. Integer-29\n    36. Integer-30\n\n===Логические выражения===" << endl;
+    for (int i = 37; i <= 42; i++) {
+        buffer += 1;
+        cout << "    " << i << ". Boolean-" << buffer << endl;
+    }
+
+    cout << "\n" << endl;
+    if (error == false) {
+        cout << "\n=====Ошибка! Введите корректные данные!=====\n" << endl;
+    }
+    cout << "---------> Выберите: ";
+    cin >> choice;
+
+    if ((1 <= choice) && (choice <= 10)) {
+        Begin(choice);
+    }
+    else if ((21 <= choice) && (choice <= 36)) {
+        Integer(choice);
+    }
+    else if ((37 <= choice) && (choice <= 42)) {
+        Boolean(choice);
+    }
+    else {
+        system("cls");
+        main(false);
+    }
+
+    system("pause");
+    return 0;
+}
+
+//Ввод и вывод данных
+int Begin(int choice) {
     int a, b, c, d, p, s, V, S;
     float pi = 3.14, LL, SS, RR;
-    switch (choice){
-        case 1:
-            //begin 1
-            cout << "a: ";
-            cin >> a;
+    switch (choice) {
+    case 1:
+        //begin 1
+        cout << "a: ";
+        cin >> a;
 
-            p = 4 * a;
-            cout << "P = " << p << endl;
-            return 0;
-            break;
-        case 2:
-            //begin 2
-            cout << "a: ";
-            cin >> a;
+        p = 4 * a;
+        cout << "P = " << p << endl;
+        break;
+    case 2:
+        //begin 2
+        cout << "a: ";
+        cin >> a;
 
-            s = pow(a, 2);
-            cout << "s = " << s << endl;
-            break;
-        case 3:
-            //begin 3
-            cout << "a: ";
-            cin >> a;
-            cout << "b: ";
-            cin >> b;
+        s = pow(a, 2);
+        cout << "s = " << s << endl;
+        break;
+    case 3:
+        //begin 3
+        cout << "a: ";
+        cin >> a;
+        cout << "b: ";
+        cin >> b;
 
-            s = a * b;
-            p = 2 * (a + b);
+        s = a * b;
+        p = 2 * (a + b);
 
-            cout << "S = " << s << endl;
-            cout << "P = " << p << endl;
-            break;
-        case 4:
-            //begin 4
-            float l;
+        cout << "S = " << s << endl;
+        cout << "P = " << p << endl;
+        break;
+    case 4:
+        //begin 4
+        float l;
 
-            cout << "d = ";
-            cin >> d;
+        cout << "d = ";
+        cin >> d;
 
-            l = pi * d;
-            cout << "l = " << l << endl;
-            break;
-        case 5:
-            //begin 5
+        l = pi * d;
+        cout << "l = " << l << endl;
+        break;
+    case 5:
+        //begin 5
 
-            cout << "a = ";
-            cin >> a;
-            // Berilgen S = a ** 3 degenimiz a ni biz cubtaimiz sol ushn 3ti cubtaimiz
+        cout << "a = ";
+        cin >> a;
+        // Berilgen S = a ** 3 degenimiz a ni biz cubtaimiz sol ushn 3ti cubtaimiz
 
-            V = pow(a, 3);
-            S = 6 * pow(a, 2);
+        V = pow(a, 3);
+        S = 6 * pow(a, 2);
 
-            cout << "V = a^3 = " << V << endl;
-            cout << "S = 6 * a^2 = " << S << endl;
-            break;
-        case 6:
-            //begin 6
-            cout << "a = ";
-            cin >> a;
+        cout << "V = a^3 = " << V << endl;
+        cout << "S = 6 * a^2 = " << S << endl;
+        break;
+    case 6:
+        //begin 6
+        cout << "a = ";
+        cin >> a;
 
-            cout << "b = ";
-            cin >> b;
+        cout << "b = ";
+        cin >> b;
 
-            cout << "c = ";
-            cin >> c;
+        cout << "c = ";
+        cin >> c;
 
-            V = a * b * c;
+        V = a * b * c;
 
-            s = 2 * (a * b + b * c + a * c);
-            cout << "V = " << V << endl;
-            cout << "S = " << s << endl;
-            break;
-        case 7:
-            //begin 7
-            cout << "R = ";
-            cin >> RR;
+        s = 2 * (a * b + b * c + a * c);
+        cout << "V = " << V << endl;
+        cout << "S = " << s << endl;
+        break;
+    case 7:
+        //begin 7
+        cout << "R = ";
+        cin >> RR;
 
-            LL = 2 * pi * RR;
-            SS = pi * pow(RR, 2);
+        LL = 2 * pi * RR;
+        SS = pi * pow(RR, 2);
 
-            cout << "L = " << LL << endl;
-            cout << "S = " << SS << endl;
+        cout << "L = " << LL << endl;
+        cout << "S = " << SS << endl;
 
-            break;
-        case 8:
-            //begin 8
-            cout << "a = ";
-            cin >> a;
-            cout << "b = ";
-            cin >> b;
+        break;
+    case 8:
+        //begin 8
+        cout << "a = ";
+        cin >> a;
+        cout << "b = ";
+        cin >> b;
 
-            s = (a * b) / 2;
-            cout << s << endl;
-            break;
-        case 9:
-            //begin 9
-            cout << "a = ";
-            cin >> a;
+        s = (a * b) / 2;
+        cout << s << endl;
+        break;
+    case 9:
+        //begin 9
+        cout << "a = ";
+        cin >> a;
 
-            cout << "b = ";
-            cin >> b;
-            S = sqrt(a * b);
-            cout << S << endl;
+        cout << "b = ";
+        cin >> b;
+        S = sqrt(a * b);
+        cout << S << endl;
 
-            break;
-        case 10:
-            //begin 10
-            int sum;
+        break;
+    case 10:
+        //begin 10
+        int sum;
 
-            cout << "a = ";
-            cin >> a;
+        cout << "a = ";
+        cin >> a;
 
-            cout << "b = ";
-            cin >> b;
+        cout << "b = ";
+        cin >> b;
 
-            sum = a + b;
-            cout << "summa: " << sum << endl;
+        sum = a + b;
+        cout << "summa: " << sum << endl;
 
-            if (a > b) {
-                cout << a << " > " << b << endl;
-            }
-            else if (a == b) {
-                cout << a << " = " << b << endl;
+        if (a > b) {
+            cout << a << " > " << b << endl;
+        }
+        else if (a == b) {
+            cout << a << " = " << b << endl;
 
-            }
-            else {
-                cout << a << " < " << b << endl;
-            }
+        }
+        else {
+            cout << a << " < " << b << endl;
+        }
 
-            cout << a << "+" << b << " = " << a + b << endl;
-            cout << a << "-" << b << " = " << a - b << endl;
-            cout << a << "*" << b << " = " << a * b << endl;
+        cout << a << "+" << b << " = " << a + b << endl;
+        cout << a << "-" << b << " = " << a - b << endl;
+        cout << a << "*" << b << " = " << a * b << endl;
 
-            cout << "\na^2 = " << pow(a, 2) << endl;
-            cout << "b^2 = " << pow(b, 2) << endl;
-            break;
+        cout << "\na^2 = " << pow(a, 2) << endl;
+        cout << "b^2 = " << pow(b, 2) << endl;
+        break;
 
 
     default:
@@ -155,351 +202,8 @@ int fullbegin(int choice) {
     return 0;
 }
 
-
-/*
-
-int begin1() {
-    int a, p;
-
-    cout << "a: ";
-    cin >> a;
-
-    p = 4 * a;
-    cout << "P = " << p << endl;
-    return 0;
-}
-
-int begin2() {
-    int a, s;
-    cout << "a: ";
-    cin >> a;
-
-    s = pow(a, 2);
-    cout << "s = " << s << endl;
-    return 0;
-}
-
-int begin3() {
-    int a, b, s, p;
-
-    cout << "a: ";
-    cin >> a;
-    cout << "b: ";
-    cin >> b;
-
-    s = a * b;
-    p = 2 * (a + b);
-
-    cout << "S = " << s << endl;
-    cout << "P = " << p << endl;
-    return 0;
-}
-
-int begin4() {
-    int d;
-    float pi = 3.14, l;
-
-    cout << "d = ";
-    cin >> d;
-
-    l = pi * d;
-    cout << "l = " << l << endl;
-
-    return 0;
-}
-
-
-int begin5(){
-    int V, a, S;
-
-    cout << "a = ";
-    cin >> a;
-    // Berilgen S = a ** 3 degenimiz a ni biz cubtaimiz sol ushn 3ti cubtaimiz
-
-    V = pow(a, 3);
-    S = 6 * pow(a, 2);
-
-    cout << "V = a^3 = " << V << endl;
-    cout << "S = 6 * a^2 = " << S << endl;
-
-    return 0;
-}
-
-int begin6() {
-    int a, b, c, V, s;
-
-    cout << "a = ";
-    cin >> a;
-
-    cout << "b = ";
-    cin >> b;
-
-    cout << "c = ";
-    cin >> c;
-
-    V = a * b * c;
-
-    s = 2 * (a * b + b * c + a * c);
-    cout << "V = " << V << endl;
-    cout << "S = " << s << endl;
-
-    return 0;
-}
-
-int begin7() {
-    float pi = 3.14, L, S, R;
-
-    cout << "R = ";
-    cin >> R;
-
-    L = 2 * pi * R;
-    S = pi * pow(R, 2);
-
-    cout << "L = " << L << endl;
-    cout << "S = " << S << endl;
-
-    return 0;
-}
-
-int begin8() {
-    int a, b, s;
-
-    cout << "a = ";
-    cin >> a;
-    cout << "b = ";
-    cin >> b;
-
-    s = (a * b) / 2;
-    cout << s << endl;
-
-    return 0;
-}
-
-int begin9(){
-    float a, b, S;
-    
-    cout << "a = ";
-    cin >> a;
-
-    cout << "b = ";
-    cin >> b;
-    S = sqrt(a * b);
-    cout << S << endl;
-
-    return 0;
-}
-
-int begin10() {
-    int a, b, sum;
-
-    cout << "a = ";
-    cin >> a;
-
-    cout << "b = ";
-    cin >> b;
-
-    sum = a + b;
-    cout << "summa: " << sum << endl;
-
-    if (a > b) {
-        cout << a << " > " << b << endl;
-    }
-    else if (a == b) {
-        cout << a << " = " << b << endl;
-
-    }
-    else {
-        cout << a << " < " << b << endl;
-    }
-
-    cout << a << "+" << b << " = " << a + b << endl;
-    cout << a << "-" << b << " = " << a - b << endl;
-    cout << a << "*" << b << " = " << a * b << endl;
-
-    cout << "\na^2 = " << pow(a, 2) << endl;
-    cout << "b^2 = " << pow(b, 2) << endl;
-
-    return 0;
-}
-*/
-
-/*
-int fullinteger(int choice) {
-    int L
-
-    switch (choice){
-    case 11:
-        //integer 1
-        int L;
-
-        cout << "L: ";
-        cin >> L;
-
-        cout << L / 100 << endl;
-        break;
-    case 12:
-
-        break;
-    case 13:
-
-        break;
-    case 14:
-
-        break;
-
-    case 15:
-
-        break;
-    case 16:
-
-        break;
-
-    case 17:
-
-        break;
-    case 18:
-        break;
-
-    case 19:
-
-        break;
-    case 20:
-
-        break;
-
-
-
-
-
-
-
-    default:
-        break;
-    }
-
-    return 0;
-}
-//-------------------------------------------------------------------------------------------------
 //Целые числа
-
-int integer1() {
-    int L;
-
-    cout << "L: ";
-    cin >> L;
-
-    cout << L / 100 << endl;
-
-    return 0;
-}
-
-int integer2() {
-    int M;
-
-    cout << "M: ";
-    cin >> M;
-
-    cout << M / 1000 << endl;
-
-    return 0;
-}
-
-int integer3() {
-    int byte;
-
-    cout << "Byte: ";
-    cin >> byte;
-
-    cout << byte / 1024 << endl;
-
-    return 0;
-}
-
-int integer4() {
-    int a, b;
-
-    cout << "a: ";
-    cin >> a;
-
-    cout << "b: ";
-    cin >> b;
-
-    cout << a / b << endl;
-     
-    return 0;
-}
-
-int integer5() {
-    int a, b;
-
-    cout << "a: ";
-    cin >> a;
-
-    cout << "b: ";
-    cin >> b;
-
-    cout << a % b << endl;
-     
-    return 0;
-}
-
-int integer6() {
-    int a;
-
-    cout << "a: ";
-    cin >> a;
-
-    cout << a / 10 << " and " << a % 10 << endl;
-
-    return 0;
-}
-
-int integer7() {
-    int a;
-
-    cout << "num: ";
-    cin >> a;
-
-    cout << "sum = " << (a / 10) + (a % 10) << endl;
-    cout << "Proisvedenie = " << (a / 10) * (a % 10) << endl;
-    
-    return 0;
-}
-
-int integer8() {
-    int a;
-
-    cout << "a: ";
-    cin >> a;
-
-    cout << a % 10 << a / 10 << endl;
-    
-    return 0;
-}
-
-int integer9() {
-    int a;
-
-    cout << "a: ";
-    cin >> a;
-
-    cout << a / 100 << endl;
-    
-    return 0;
-}
-
-int integer10() {
-    int num;
-
-    cout << "num: ";
-    cin >> num;
-
-    cout << num % 10 << " and " << (num % 100) / 10 << endl;
-    
-    return 0;
-}
-*/
-int integermax(int choice) {
+int Integer(int choice) {
     int a, b, n, L, M, byte, num;
     switch (choice) {
     case 11:
@@ -532,7 +236,7 @@ int integermax(int choice) {
         break;
     case 14:
         //integer 4
-        
+
         cout << "a: ";
         cin >> a;
 
@@ -540,7 +244,7 @@ int integermax(int choice) {
         cin >> b;
 
         cout << a / b << endl;
-        
+
         break;
     case 15:
         //integer 5
@@ -687,7 +391,8 @@ int integermax(int choice) {
         k = k % 7;
         if (k == 0) {
             cout << "воскресенье" << endl;
-        }else if(k == 1) {
+        }
+        else if (k == 1) {
             cout << "понидельник" << endl;
         }
         else if (k == 2) {
@@ -739,11 +444,8 @@ int integermax(int choice) {
     return 0;
 }
 
-//-------------------------------------------------------------------------------------------------
 //Логические выражения
-
-
-int booleanfull(int choice) {
+int Boolean(int choice) {
     int a, b;
 
     switch (choice) {
@@ -833,142 +535,5 @@ int booleanfull(int choice) {
         break;
     }
 
-    return 0;
-}
-
-//-------------------------------------------------------------------------------------------------
-//начинается майн функция
-int main() {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    int choice, buffer = 0;
-
-    cout << "===Ввод и вывод данных===" << endl;
-    for (int i = 1; i <= 10; i++) {
-        cout << "    " << i << ". Begin-" << i << endl;
-    }
-    cout << "\n===Целые числа===" << endl;
-    for (int i = 11; i <= 36; i++) {
-        buffer += 1;
-        cout << "    " << i << ". Integer-" << buffer << endl;
-    }
-    cout << "    " << "35. Integer-29\n    36. Integer-30\n\n===Логические выражения===" << endl;
-    for (int i = 37; i <= 42; i++) {
-        buffer += 1;
-        cout << "    " << i << ". Boolean-" << buffer << endl;
-    }
-
-
-    cout << "\n" << endl;
-    /*if (error == true) {
-        cout << "\n=====Ошибка! Введите корректные данные!=====\n" << endl;
-    }*/
-    cout << "---------> Выберите: ";
-    cin >> choice;
-
-
-    
-    if ((1 <= choice) && (choice <= 10)) {
-        fullbegin(choice);
-    }
-    else if ((21 <= choice) && (choice <= 36)) {
-        integermax(choice);
-    }
-    else if ((37 <= choice) && (choice <= 42)) {
-        booleanfull(choice);
-    }
-    else {
-        system("cls");
-        main();
-
-    }
-    
-    /*
-    switch (choice){
-
-
-    case 1:
-        begin1();
-        break;
-    case 2:
-        begin2();
-        break;
-    case 3:
-        begin3();
-        break;
-    case 4:
-        begin4();
-        break;
-    case 5:
-        begin5();
-        break;
-    case 6:
-        begin6();
-        break;
-    case 7:
-        begin7();
-        break;
-    case 8:
-        begin8();
-        break;
-    case 9:
-        begin9();
-        break;
-    case 10:
-        begin10();
-        break;
-
-
-
-    case 11:
-        integer1();
-        break;
-    case 12:
-        integer2();
-        break;
-    case 13:
-        integer3();
-        break;
-    case 14:
-        integer4();
-        break;
-    case 15:
-        integer5();
-        break;
-    case 16:
-        integer6();
-        break;
-    case 17:
-        integer7();
-        break;
-    case 18:
-        integer8();
-        break;
-    case 19:
-        integer9();
-        break;
-    case 20:
-        integer10();
-        break;
-
-    default:
-        if ((21 <= choice) && (choice <= 36)) {
-            integermax(choice);
-        }else if((37 <= choice) && (choice <= 43)) {
-            booleanfull(choice);
-        }
-        else {
-            system("cls");
-            cout << "\n---------->Ошибка! Введите корректные данные! \n" << endl;
-            main();
-
-        }
-        break;
-    }
-
-    */
-    
-    
-    system("pause");
     return 0;
 }
