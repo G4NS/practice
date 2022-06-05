@@ -7,47 +7,64 @@ using namespace std;
 int Begin(int choice);
 int Integer(int choice);
 int Boolean(int choice);
+int If(int choice);
 
 int main(bool error) {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     int choice, buffer = 0;
 
-    cout << "===Ввод и вывод данных===" << endl;
+    cout << "<===> Ввод и вывод данных <===>" << endl;
     for (int i = 1; i <= 10; i++) {
-        cout << "    " << i << ". Begin-" << i << endl;
+        cout << "   [" << i << "]" << " Begin-" << i << endl;
     }
-    cout << "\n===Целые числа===" << endl;
-    for (int i = 11; i <= 36; i++) {
+    cout << "\n<===> Целые числа <===>" << endl;
+    for (int i = 11; i <= 34; i++) {
         buffer += 1;
-        cout << "    " << i << ". Integer-" << buffer << endl;
+        cout << "   [" << i << "]" << " Integer-" << buffer << endl;
     }
-    cout << "    " << "35. Integer-29\n    36. Integer-30\n\n===Логические выражения===" << endl;
+    cout << "   [35] Integer-29" << endl;
+    cout << "   [36] Integer-30" << endl;
+    cout << "\n<===> Логические выражения <===>" << endl;
+
+    buffer = 1;
     for (int i = 37; i <= 42; i++) {
+        cout << "   [" << i << "] Boolean-" << buffer << endl;
         buffer += 1;
-        cout << "    " << i << ". Boolean-" << buffer << endl;
+    }
+    buffer = 17;
+    for (int i = 43; i <= 45; i++) {
+        cout << "   [" << i << "] If-" << buffer << endl;
+        buffer += 1;
     }
 
     cout << "\n" << endl;
     if (error == false) {
-        cout << "\n=====Ошибка! Введите корректные данные!=====\n" << endl;
+        cout << "\n[*] Ошибка!Введите корректные данные!" << endl;
     }
-    cout << "---------> Выберите: ";
+    cout << "[*] Выберите: ";
     cin >> choice;
+
+
 
     if ((1 <= choice) && (choice <= 10)) {
         Begin(choice);
     }
-    else if ((21 <= choice) && (choice <= 36)) {
+    else if ((11 <= choice) && (choice <= 36)) {
         Integer(choice);
     }
     else if ((37 <= choice) && (choice <= 42)) {
         Boolean(choice);
     }
+    else if ((43 <= choice) && (choice <= 46)) {
+        If(choice);
+    }
     else {
         system("cls");
         main(false);
     }
+
+
 
     system("pause");
     return 0;
@@ -195,7 +212,7 @@ int Begin(int choice) {
 
     default:
         system("cls");
-        cout << "---------->Ошибка!!!" << endl;
+        cout << "[*] Ошибка!" << endl;
         break;
     }
 
@@ -300,9 +317,6 @@ int Integer(int choice) {
 
         cout << num % 10 << " and " << (num % 100) / 10 << endl;
         break;
-
-
-
     case 21:
         //integer11
         //int a;
@@ -436,7 +450,7 @@ int Integer(int choice) {
 
     default:
         system("cls");
-        cout << "---------->Ошибка!!!" << endl;
+        cout << "[*] Ошибка!" << endl;
         break;
     }
 
@@ -532,8 +546,144 @@ int Boolean(int choice) {
         }
 
     default:
+        system("cls");
+        cout << "[*] Ошибка!" << endl;
         break;
     }
+
+    return 0;
+}
+int If(int choice) {
+    int a, b, c, d;
+    float A, B, C;
+
+    switch (choice){
+    case 43:
+        //if 17
+        cout << "A: ";
+        cin >> A;
+        cout << "B: ";
+        cin >> B;
+        cout << "C: ";
+        cin >> C;
+
+        if ((A <= B) && (B <= C)) {
+            A *= 2;
+            B *= 2;
+            C *= 2;
+        }
+        else if ((A >= B) && (B >= C)) {
+            A *= 2;
+            B *= 2;
+            C *= 2;
+        }
+        else {
+            A *= -1;
+            B *= -1;
+            C *= -1;
+        }
+        cout << "A=" << A << "\nB=" << B << "\nC=" << C << endl;
+        break;
+    case 44:
+        //if 18
+        cout << "a: ";
+        cin >> a;
+        cout << "b: ";
+        cin >> b;
+        cout << "c: ";
+        cin >> c;
+
+        if ((a == b) && (b == c)) {
+            cout << "Все одинаковые числа!" << endl;
+        }
+        else if (a == b) {
+            cout << "\n[3] " << c << endl;
+        }
+        else if (a == c) {
+            cout << "\n[2] " << b << endl;
+        }
+        else if (b == c) {
+            cout << "\n[1] " << a << endl;
+        }
+        else {
+            cout << "Нету одинаковых чисел!" << endl;
+        }
+        break;
+    case 45:
+        //if 19
+        cout << "a: ";
+        cin >> a;
+        cout << "b: ";
+        cin >> b;
+        cout << "c: ";
+        cin >> c;
+        cout << "d: ";
+        cin >> d;
+
+        if ((a == b) && (b == c) && (c == d)) {
+            cout << "Все одинаковые числа!" << endl;
+        }
+        else if ((a == b) &&(b == c)) {
+
+            cout << "\n[4] " << d << endl;
+        }
+        else if ((a == b) && (b == d)) {
+
+            cout << "\n[3] " << c << endl;
+        }
+        else if ((a == c) && (c == d)) {
+
+            cout << "\n[2] " << b << endl;
+        }
+        else if ((b == c) && (c == d)) {
+            cout << "\n[1] " << a << endl;
+        }
+        else {
+            cout << "Ошибка! Введите корректные данные!" << endl;
+        }
+        break;
+    case 46:
+        //if 20
+        cout << "a: ";
+        cin >> a;
+        cout << "b: ";
+        cin >> b;
+        cout << "c: ";
+        cin >> c;
+
+        if (b >= c) {
+            cout << b << "b blyad" << endl;
+            cout << "B - Расположен ближе к точке А. Рассотяние ";
+            int buffer = 0;
+            for (int i = b; i < a; i++) {
+                buffer += 1;
+            }
+            cout << buffer << endl;
+        }else if (b < c) {
+            cout << "C - Расположен ближе к точке А. Рассотяние ";
+            int buffer = 0;
+            for (int i = c; i < a; i++) {
+                buffer += 1;
+            }
+            cout << buffer << endl;
+        }
+        else {
+            cout << "ошибка" << endl;
+        }
+        break;
+    case 47:
+        //if 21
+
+
+        break;
+
+
+    default:
+        system("cls");
+        cout << "[*] Ошибка!" << endl;
+        break;
+    }
+
 
     return 0;
 }
