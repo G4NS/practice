@@ -33,7 +33,7 @@ int main(bool error) {
         buffer += 1;
     }
     buffer = 17;
-    for (int i = 43; i <= 45; i++) {
+    for (int i = 43; i <= 56; i++) {
         cout << "   [" << i << "] If-" << buffer << endl;
         buffer += 1;
     }
@@ -56,7 +56,7 @@ int main(bool error) {
     else if ((37 <= choice) && (choice <= 42)) {
         Boolean(choice);
     }
-    else if ((43 <= choice) && (choice <= 46)) {
+    else if ((43 <= choice) && (choice <= 56)) {
         If(choice);
     }
     else {
@@ -554,8 +554,8 @@ int Boolean(int choice) {
     return 0;
 }
 int If(int choice) {
-    int a, b, c, d;
-    float A, B, C;
+    int a, b, c, d, x, y;
+    float A, B, C, X;
 
     switch (choice){
     case 43:
@@ -651,32 +651,222 @@ int If(int choice) {
         cout << "c: ";
         cin >> c;
 
-        if (b >= c) {
-            cout << b << "b blyad" << endl;
+        if (abs(a - b) < abs(a - c)) {
             cout << "B - Расположен ближе к точке А. Рассотяние ";
-            int buffer = 0;
-            for (int i = b; i < a; i++) {
-                buffer += 1;
+            if (a - b > 0) {
+                cout << a - b << endl;
             }
-            cout << buffer << endl;
-        }else if (b < c) {
-            cout << "C - Расположен ближе к точке А. Рассотяние ";
-            int buffer = 0;
-            for (int i = c; i < a; i++) {
-                buffer += 1;
+            else {
+                cout << (a - b) * -1 << endl;
             }
-            cout << buffer << endl;
         }
-        else {
-            cout << "ошибка" << endl;
+        else{
+
+            cout << "C - Расположен ближе к точке А. Рассотяние ";
+            if(a - c > 0){
+                cout << a - c << endl;
+            }else {
+                cout << (a - c) * -1 << endl;
+            }
+
         }
         break;
     case 47:
         //if 21
+        cout << "x: ";
+        cin >> x;
+        cout << "y: ";
+        cin >> y;
 
-
+        if ((x == 0) && (y == 0)) {
+            cout << "0" << endl;
+        }
+        else if ((x == 0) && (y != 0)) {
+            cout << "1" << endl;
+        }
+        else if ((x != 0) && (y == 0)) {
+            cout << "2" << endl;
+        }
+        else {
+            cout << "3" << endl;
+        }
         break;
+    case 48:
+        //if 22
+        cout << "x: ";
+        cin >> x;
+        cout << "y: ";
+        cin >> y;
 
+        if ((x > 0) && (y > 0)) {
+            cout << "I - координатная четверть" << endl;
+        }
+        else if ((x < 0) && (y > 0)) {
+            cout << "II - координатная четверть" << endl;
+        }
+        else if ((x < 0) && (y < 0)) {
+            cout << "III - координатная четверть" << endl; 
+        }
+        else if ((x > 0) && (y < 0)) {
+            cout << "IV - координатная четверть" << endl;
+        }
+        else {
+            cout << "ошибка!" << endl;
+        }
+        break;
+    case 49:
+        //if 23
+        int x2, y2, x3, y3;
+        cout << "x1: ";
+        cin >> x;
+        cout << "y1: ";
+        cin >> y;
+
+        cout << "x2: ";
+        cin >> x2;
+        cout << "y2: ";
+        cin >> y2;
+
+        cout << "x3: ";
+        cin >> x3;
+        cout << "y3: ";
+        cin >> y3;
+
+        if (x2 == x3)
+            cout << "x4:" << x << endl;
+        else
+            if (x3 == x)
+                cout << "x4:" << x2 << endl;
+            else
+                cout << "x4:" << x3 << endl;
+
+        if (y2 == y3)
+            cout << "y4:" << y << endl;
+        else
+            if (y3 == y)
+                cout << "y4:" << y2 << endl;
+            else
+                cout << "y4:" << y2 << endl;
+        break;
+    case 50:
+        //if 24
+        cout << "x: ";
+        cin >> x;
+
+        if (x > 0) {
+            cout << 2 * sin(x) << endl;
+        }
+        else if (x < 0){
+            cout << (6 - x) << endl;
+        }
+        break;
+    case 51:
+        //if 25
+        cout << "x: ";
+        cin >> x;
+
+        if ((x < -2) || (x > 2)) {
+            cout << 2 * x << endl;
+        }
+        else {
+            cout << -3 * x << endl;
+        }
+        break;
+    case 52:
+        //if 26
+        cout << "x: ";
+        cin >> x;
+
+        if (x <= 0) {
+            cout << x * -1 << endl;
+        }
+        else if ((0 < x) && (x < 2)) {
+            cout << pow(x, 2) << endl;
+        }
+        else if (x >= 2) {
+            cout << "4" << endl;
+        }
+        break;
+    case 53:
+        //if 27
+        cout << "x: ";
+        cin >> X;
+
+        if (X < 0) {
+            cout << "0" << endl;
+        }
+        else if ((int(X) % 2) == 0) {
+            cout << "1" << endl;
+        }
+        else {
+            cout << "-1" << endl;
+        }
+        break;
+    case 54:
+        //if 28
+        cout << "year: ";
+        cin >> x;
+
+        if (((x % 4) == 0) && ((x % 100) != 0) || ((x % 400) == 0)) {
+            cout << "366" << endl;
+        }
+        else {
+            cout << "365" << endl;
+        }
+        break;
+    case 55:
+        //if 29
+        cout << "x: ";
+        cin >> x;
+
+        if (x > 0) {
+            if ((x % 2) == 0) {
+                cout << "Положительное четное число" << endl;
+            }
+            else {
+                cout << "Положительное нечетное число" << endl;
+            }
+        }
+        else if (x < 0) {
+            if ((x % 2) == 0) {
+                cout << "Отрицательное четное число" << endl;
+            }
+            else {
+                cout << "Отрицательное нечетное число" << endl;
+            }
+        }
+        else {
+            cout << "Нулевое число" << endl;
+        }
+        break;
+    case 56:
+        //if 30
+        cout << "x: ";
+        cin >> x;
+
+        if ((x % 2) == 0) {
+            if ((1 <= x) && (x <= 9)) {
+                cout << "Четное однозначное число" << endl;
+            }
+            else if ((10 <= x) && (x <= 99)) {
+                cout << "Четное двузначное число" << endl;
+            }
+            else if ((100 <= x) && (x <= 999)) {
+                cout << "Четное трехзначное число" << endl;
+            }
+        }
+        else {
+            if ((1 <= x) && (x <= 9)) {
+                cout << "Нечетное однозначное число" << endl;
+            }
+            else if ((10 <= x) && (x <= 99)) {
+                cout << "Нечтное двузначное число" << endl;
+            }
+            else if ((100 <= x) && (x <= 999)) {
+                cout << "Нечетное трехзначное число" << endl;
+            }
+        }
+        break;
 
     default:
         system("cls");
