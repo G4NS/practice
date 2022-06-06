@@ -8,6 +8,7 @@ int Begin(int choice);
 int Integer(int choice);
 int Boolean(int choice);
 int If(int choice);
+int Case(int choice);
 
 int main(bool error) {
     SetConsoleCP(1251);
@@ -37,6 +38,12 @@ int main(bool error) {
         cout << "   [" << i << "] If-" << buffer << endl;
         buffer += 1;
     }
+    cout << "\n<===> Оператор выбора <===>" << endl;
+    buffer = 1;
+    for (int i = 57; i <= 65; i++) {
+        cout << "   [" << i << "] Case-" << buffer << endl;
+        buffer += 1;
+    }
 
     cout << "\n" << endl;
     if (error == false) {
@@ -58,6 +65,9 @@ int main(bool error) {
     }
     else if ((43 <= choice) && (choice <= 56)) {
         If(choice);
+    }
+    else if ((57 <= choice) && (choice <= 65)) {
+        Case(choice);
     }
     else {
         system("cls");
@@ -875,5 +885,353 @@ int If(int choice) {
     }
 
 
+    return 0;
+}
+
+//Оператор выбора
+int Case(int choice) {
+    int x, n, l, D, M;
+    float A, B;
+    
+    switch (choice){
+    case 57:
+        //case 1
+        cout << "x: ";
+        cin >> x;
+
+        switch (x){
+        case 1:
+            cout << "Понидельник" << endl;
+            break;
+        case 2:
+            cout << "Вторник" << endl;
+            break;
+        case 3:
+            cout << "Среда" << endl;
+            break;
+        case 4:
+            cout << "Четверг" << endl;
+            break;
+        case 5:
+            cout << "Пятница" << endl;
+            break;
+        case 6:
+            cout << "Суббота" << endl;
+            break;
+        case 7:
+            cout << "Воскресение" << endl;
+            break;
+
+        default:
+            cout << "Цифры 1-7" << endl;
+            break;
+        }
+        break;
+
+    case 58:
+        //case 2
+        cout << "K: ";
+        cin >> x;
+
+        switch (x){
+        case 1:
+            cout << "плохо" << endl;
+            break;
+        case 2:
+            cout << "неудовлетворительно" << endl;
+            break;
+        case 3:
+            cout << "удовлетворительно" << endl;
+            break;
+        case 4:
+            cout << "хорошо" << endl;
+            break;
+        case 5:
+            cout << "отлично" << endl;
+            break;
+        default:
+            cout << "ошибка" << endl;
+            break;
+        }
+        break;
+
+    case 59:
+        //case 3
+        cout << "M: ";
+        cin >> x;
+
+        switch (x) {
+        case 1:
+            cout << "Январь" << endl;
+            break;
+        case 2:
+            cout << "Февраль" << endl;
+            break;
+        case 3:
+            cout << "Март" << endl;
+            break;
+        case 4:
+            cout << "Апрель" << endl;
+            break;
+        case 5:
+            cout << "Май" << endl;
+            break;
+        case 6:
+            cout << "Июнь" << endl;
+            break;
+        case 7:
+            cout << "Июль" << endl;
+            break;
+        case 8:
+            cout << "Август" << endl;
+            break;
+        case 9:
+            cout << "Сентябрь" << endl;
+            break;
+        case 10:
+            cout << "Октябрь" << endl;
+            break;
+        case 11:
+            cout << "Ноябрь" << endl;
+            break;
+        case 12:
+            cout << "Декабрь" << endl;
+            break;
+        default:
+            cout << "ошибка!" << endl;
+            break;
+        }
+
+        break;
+    case 60:
+        //case 4
+        cout << "M: ";
+        cin >> x;
+
+        switch (x) {
+        case 1:
+
+        case 3:
+
+        case 5:
+
+        case 7:
+
+        case 8:
+
+        case 10:
+
+        case 12:
+            cout << "В месяце 31 днень" << endl;
+            break;
+        case 4:
+
+        case 6:
+
+        case 9:
+
+        case 11:
+            cout << "В месяце 30 днень" << endl;
+            break;
+        case 2:
+            cout << "В месяце 28 днень";
+            break;
+        }
+
+        break;
+    case 61:
+        //case 5
+        cout << "N: ";
+        cin >> n;
+        cout << "a: ";
+        cin >> A;
+        cout << "b: ";
+        cin >> B;
+
+        switch (n){
+        case 1:
+            cout << A + B << endl;
+            break;
+        case 2:
+            cout << A - B << endl;
+            break;
+        case 3:
+            cout << A * B << endl;
+            break;
+        case 4:
+            cout << A / B << endl;
+
+        default:
+            cout << "Ошибка" << endl;
+            break;
+        }
+
+        break;
+    case 62:
+        //case 6
+        cout << "n: ";
+        cin >> n;
+        cout << "L: ";
+        cin >> l;
+
+        switch (n) {
+        case 1:
+            cout << l / 10 << endl;
+            break;
+        case 2:
+            cout << l * 1000 << endl;
+            break;
+        case 3:
+            cout << l << endl;
+            break;
+        case 4:
+            cout << l / 1000 << endl;
+            break;
+        case 5:
+            cout << l / 100 << endl;
+            break;
+        }
+        break;
+
+    case 63:
+        //case 7
+        cout << "n: ";
+        cin >> n;
+        cout << "M:";
+        cin >> x;
+
+        switch (n) {
+        case 1:
+            cout << x << endl;
+            break;
+        case 2:
+            cout << x / 1000000 << endl;
+            break;
+        case 3:
+            cout << x / 1000 << endl;
+            break;
+        case 4:
+            cout << x * 1000 << endl;
+            break;
+        case 5:
+            cout << x * 100 << endl;
+            break;
+        }
+        break;
+
+    case 64:
+        //case 8
+        cout << "Введите день:";
+        cin >> D;
+        cout << "Введите номер месяца:";
+        cin >> M;
+
+        D = D - 1;
+        if (D == 0) {
+            M = M - 1;
+            if (M == 0) {
+                M = 12;
+            }
+            switch (M)
+            {
+            case 1: 
+                D = 31;
+                break;
+            case 3: 
+                D = 31;
+                break;
+            case 5: 
+                D = 31;
+                break;
+            case 7: 
+                D = 31;
+                break;
+            case 8: 
+                D = 31;
+                break;
+            case 10: 
+                D = 31;
+                break;
+            case 12: 
+                D = 31;
+                break;
+            case 4: 
+                D = 30;
+                break;
+            case 6: 
+                D = 30;
+                break;
+            case 9: 
+                D = 30;
+                break;
+            case 11: 
+                D = 30;
+                break;
+            case 2:
+                D = 28;
+                break;
+            }
+        }
+        cout << "Предыдущая дата: " << D << "." << M << endl;
+        break;
+
+    case 65:
+        //case 9
+        cout << "D: ";
+        cin >> D;
+        cout << "M: ";
+        cin >> M;
+
+        switch (M) {
+        case 1:
+
+        case 3:
+
+        case 5:
+
+        case 7:
+
+        case 8:
+
+        case 10:
+
+        case 12:
+            if (D == 31) {
+                D = 0;
+            }
+            break;
+
+        case 4:
+
+        case 6:
+
+        case 9:
+
+        case 11:
+            if (D == 30) {
+                D = 0;
+            }
+            break;
+
+        case 2:
+            if (D == 28) {
+                D = 0;
+            }
+            break;
+        }
+
+        if (D == 0)
+            if (M == 12) M = 1;
+            else M++;
+
+        D++;
+        cout << D << "." << M << endl;
+        break;
+
+    default:
+        system("cls");
+        cout << "[*] Ошибка!" << endl;
+        break;
+    }
     return 0;
 }
