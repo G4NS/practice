@@ -1250,9 +1250,9 @@ int Case(int choice) {
 //Цикл с параметром
 int For(int choice) {
     int K, N, A, B, buffer = 0;
-    float n, a;
+    float n, a, fbuffer;
 
-    switch (choice){
+    switch (choice) {
     case 66:
         //for 1
         cout << "K: ";
@@ -1286,7 +1286,7 @@ int For(int choice) {
         cout << "B: ";
         cin >> B;
 
-        for (int i = B-1; i >> A; i--) {
+        for (int i = B - 1; i >> A; i--) {
             cout << i << endl;
             buffer += 1;
         }
@@ -1392,36 +1392,64 @@ int For(int choice) {
 
         cout << "N: ";
         cin >> N;
-        a = 1.1;
-
-        for (float i = a; i <= N; i =+ 0.1) {
-            cout << i << endl;
-            //a *= i;
+        a = 1;
+        for (int i = 1; i <= N; i++) {
+            a = a * (1 + 0.1 * i);
         }
         cout << a << endl;
         break;
 
     case 78:
         //for 13
+        cout << "n=";
+        cin >> n;
+        a = 0;
+        for (int i = 1; i <= n; i++) {
+            a += pow(-1, i + 1) * (1.0 + (float)i / 10);
+        }
+        cout << a << endl;
 
         break;
 
     case 79:
         //for 14
+        cout << "N:";
+        cin >> n;
+        A = 0;
+        
+        for (int i = 1; i <= (2 * n - 1); i += 2) {
+            A += i;
+        }
+        cout << A << endl;
 
         break;
 
     case 80:
         //for 15
+        cout << "N: ";
+        cin >> n;
+        cout << "A: ";
+        cin >> a;
+        fbuffer = 1;
 
+        for (int i = 1; i <= n; i++) {
+            fbuffer *= a;
+        }cout << fbuffer << endl;
         break;
 
     case 81:
         //for 16
-
+        cout << "A:";
+        cin >> a;
+        cout << "N:";
+        cin >> n;
+        
+        fbuffer = 1;
+        for (int i = 1; i <= n; ++i) {
+            fbuffer *= a;
+        }
+        cout << fbuffer << endl;
         break;
-
-
 
     default:
         break;
