@@ -9,6 +9,7 @@ int Integer(int choice);
 int Boolean(int choice);
 int If(int choice);
 int Case(int choice);
+int For(int choice);
 
 int main(bool error) {
     SetConsoleCP(1251);
@@ -45,6 +46,13 @@ int main(bool error) {
         buffer += 1;
     }
 
+    cout << "\n<===>Цикл с параметром<===>" << endl;
+    buffer = 1;
+    for (int i = 66; i <= 81; i++) {
+        cout << "   [" << i << "] For-" << buffer << endl;
+        buffer += 1;
+    }
+
     cout << "\n" << endl;
     if (error == false) {
         cout << "\n[*] Ошибка!Введите корректные данные!" << endl;
@@ -68,6 +76,9 @@ int main(bool error) {
     }
     else if ((57 <= choice) && (choice <= 65)) {
         Case(choice);
+    }
+    else if ((66 <= choice) && (choice <= 81)) {
+        For(choice);
     }
     else {
         system("cls");
@@ -1233,5 +1244,188 @@ int Case(int choice) {
         cout << "[*] Ошибка!" << endl;
         break;
     }
+    return 0;
+}
+
+//Цикл с параметром
+int For(int choice) {
+    int K, N, A, B, buffer = 0;
+    float n, a;
+
+    switch (choice){
+    case 66:
+        //for 1
+        cout << "K: ";
+        cin >> K;
+        cout << "N: ";
+        cin >> N;
+
+        for (int i = 1; i <= N; i++) {
+            cout << i << ". " << K << endl;
+        }
+        break;
+
+    case 67:
+        //for 2
+        cout << "A: ";
+        cin >> A;
+        cout << "B: ";
+        cin >> B;
+
+        for (int i = A; i <= B; i++) {
+            cout << i << endl;
+            buffer += 1;
+        }
+        cout << "N = " << buffer << endl;
+        break;
+
+    case 68:
+        //for 3
+        cout << "A: ";
+        cin >> A;
+        cout << "B: ";
+        cin >> B;
+
+        for (int i = B-1; i >> A; i--) {
+            cout << i << endl;
+            buffer += 1;
+        }
+        cout << "N = " << buffer << endl;
+        break;
+
+    case 69:
+        //for 4
+        cout << "Цена: ";
+        cin >> n;
+
+        for (int i = 1; i <= 10; i++) {
+            cout << i << " кг, стоимость - " << i * n << endl;
+        }
+        break;
+
+    case 70:
+        //for 5
+        cout << "Цена: ";
+        cin >> n;
+
+        for (float i = 0.1; i <= 1.1; i += 0.1) {
+            cout << i << " кг, стоимость - " << i * n << endl;
+        }
+        break;
+
+    case 71:
+        //for 6
+        cout << "Цена: ";
+        cin >> n;
+
+        for (float i = 1.2; i <= 2.1; i += 0.2) {
+            cout << i << " кг, стоимость - " << i * n << endl;
+        }
+        break;
+
+    case 72:
+        //for 7
+        cout << "A: ";
+        cin >> A;
+        cout << "B: ";
+        cin >> B;
+
+        for (int i = A; i <= B; i++) {
+            buffer += i;
+        }
+        cout << buffer << endl;
+        break;
+
+    case 73:
+        //for 8
+        cout << "A: ";
+        cin >> A;
+        cout << "B: ";
+        cin >> B;
+        buffer = 1;
+
+        for (int i = A; i <= B; i++) {
+            buffer *= i;
+        }
+        cout << buffer << endl;
+        break;
+    case 74:
+        //for 9
+        cout << "A: ";
+        cin >> A;
+        cout << "B: ";
+        cin >> B;
+
+        for (int i = A; i <= B; i++) {
+            buffer += pow(i, 2);
+        }
+        cout << buffer << endl;
+        break;
+
+    case 75:
+        //for 10
+        cout << "N: ";
+        cin >> N;
+        n = 0;
+
+        for (double i = 1; i <= N; i++) {
+            n += double(1 / i);
+        }
+        cout << n << endl;
+        break;
+
+    case 76:
+        //for 11
+        cout << "N: ";
+        cin >> N;
+        buffer = pow(N, 2);
+        for (int i = 1; i <= N; i++) {
+            buffer += pow((N + i), 2);
+        }
+        buffer += pow((2 * N), 2);
+
+        cout << buffer << endl;
+        break;
+
+    case 77:
+        //for 12
+
+        cout << "N: ";
+        cin >> N;
+        a = 1.1;
+
+        for (float i = a; i <= N; i =+ 0.1) {
+            cout << i << endl;
+            //a *= i;
+        }
+        cout << a << endl;
+        break;
+
+    case 78:
+        //for 13
+
+        break;
+
+    case 79:
+        //for 14
+
+        break;
+
+    case 80:
+        //for 15
+
+        break;
+
+    case 81:
+        //for 16
+
+        break;
+
+
+
+    default:
+        break;
+    }
+
     return 0;
 }
