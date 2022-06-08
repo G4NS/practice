@@ -10,6 +10,7 @@ int Boolean(int choice);
 int If(int choice);
 int Case(int choice);
 int For(int choice);
+int While(int choice);
 
 int main(bool error) {
     SetConsoleCP(1251);
@@ -21,38 +22,43 @@ int main(bool error) {
         cout << "   [" << i << "]" << " Begin-" << i << endl;
     }
     cout << "\n<===> Целые числа <===>" << endl;
-    for (int i = 11; i <= 34; i++) {
+    for (int i = 11; i <= 40; i++) {
         buffer += 1;
         cout << "   [" << i << "]" << " Integer-" << buffer << endl;
     }
-    cout << "   [35] Integer-29" << endl;
-    cout << "   [36] Integer-30" << endl;
     cout << "\n<===> Логические выражения <===>" << endl;
-
     buffer = 1;
-    for (int i = 37; i <= 42; i++) {
+    for (int i = 41; i <= 46; i++) {
         cout << "   [" << i << "] Boolean-" << buffer << endl;
         buffer += 1;
     }
     buffer = 17;
-    for (int i = 43; i <= 56; i++) {
+    for (int i = 47; i <= 60; i++) {
         cout << "   [" << i << "] If-" << buffer << endl;
         buffer += 1;
     }
     cout << "\n<===> Оператор выбора <===>" << endl;
     buffer = 1;
-    for (int i = 57; i <= 65; i++) {
+    for (int i = 61; i <= 69; i++) {
         cout << "   [" << i << "] Case-" << buffer << endl;
         buffer += 1;
     }
-
-    cout << "\n<===>Цикл с параметром<===>" << endl;
+    cout << "\n<===> Цикл с параметром <===>" << endl;
     buffer = 1;
-    for (int i = 66; i <= 81; i++) {
+    for (int i = 70; i <= 85; i++) {
         cout << "   [" << i << "] For-" << buffer << endl;
         buffer += 1;
     }
-
+    cout << "\n<===>Цикл с условием<===>" << endl;
+    buffer = 1;
+    for (int i = 86; i <= 91; i++) {
+        cout << "   [" << i << "] While-" << buffer << endl;
+        buffer += 1;
+    } buffer = 12;
+    for (int i = 92; i <= 100; i++) {
+        cout << "   [" << i << "] While-" << buffer << endl;
+        buffer += 1;
+    }
     cout << "\n" << endl;
     if (error == false) {
         cout << "\n[*] Ошибка!Введите корректные данные!" << endl;
@@ -60,32 +66,31 @@ int main(bool error) {
     cout << "[*] Выберите: ";
     cin >> choice;
 
-
-
     if ((1 <= choice) && (choice <= 10)) {
         Begin(choice);
     }
-    else if ((11 <= choice) && (choice <= 36)) {
+    else if ((11 <= choice) && (choice <= 40)) {
         Integer(choice);
     }
-    else if ((37 <= choice) && (choice <= 42)) {
+    else if ((41 <= choice) && (choice <= 46)) {
         Boolean(choice);
     }
-    else if ((43 <= choice) && (choice <= 56)) {
+    else if ((47 <= choice) && (choice <= 60)) {
         If(choice);
     }
-    else if ((57 <= choice) && (choice <= 65)) {
+    else if ((61 <= choice) && (choice <= 69)) {
         Case(choice);
     }
-    else if ((66 <= choice) && (choice <= 81)) {
+    else if ((70 <= choice) && (choice <= 85)) {
         For(choice);
+    }
+    else if ((86 <= choice) && (choice <= 100)) {
+        While(choice);
     }
     else {
         system("cls");
         main(false);
     }
-
-
 
     system("pause");
     return 0;
@@ -242,7 +247,7 @@ int Begin(int choice) {
 
 //Целые числа
 int Integer(int choice) {
-    int a, b, n, L, M, byte, num;
+    int a, b, n, L, M, byte, num, k;
     switch (choice) {
     case 11:
         //integer 1
@@ -420,7 +425,6 @@ int Integer(int choice) {
         break;
     case 34:
         //intger24;
-        int k;
         cout << "Введите значение K: ";
         cin >> k;
         k = k % 7;
@@ -449,7 +453,48 @@ int Integer(int choice) {
             cout << "ошибка!" << endl;
         }
         break;
+
     case 35:
+        //integer25
+        cout << "K: ";
+        cin >> b;
+        cout << endl;
+
+        a = (b + 3) % 7;
+        cout << a << endl;
+
+        break;
+    case 36:
+        //integer26
+        cout << "K: ";
+        cin >> b;
+        a = (b % 7) + 1;
+        cout << a << endl;
+        break;
+
+    case 37:
+        //integer27
+        cout << "K:";
+        cin >> k;
+
+        a = ((k + 4) % 7) + 1;
+        cout << a << endl;
+
+        break;
+
+    case 38:
+        //integer28
+        cout << "K:";
+        cin >> k;
+        cout << "N:";
+        cin >> b;
+
+        b = b - 2;
+        a = ((k + b) % 7) + 1;
+        cout << a << endl;
+        break;
+
+    case 39:
         //integer29
         int b, c;
         cout << "Введите число A: ";
@@ -460,7 +505,7 @@ int Integer(int choice) {
         cin >> c;
         cout << "Количество квадратов, размещенных на прямоугольнике: " << (a * b) / (c * c) << " Площадь незанятой части прямоугольник: " << (a * b) % (c * c) << endl;
         break;
-    case 36:
+    case 40:
         //integer30
         cout << "Введите год: " << endl;
         cin >> a;
@@ -484,7 +529,7 @@ int Boolean(int choice) {
     int a, b;
 
     switch (choice) {
-    case 37:
+    case 41:
         //boolean 1
         cout << "A: ";
         cin >> a;
@@ -496,7 +541,7 @@ int Boolean(int choice) {
             cout << "Число " << a << " не является положительным" << endl;
         }
         break;
-    case 38:
+    case 42:
         //boolean 2
         cout << "A: ";
         cin >> a;
@@ -508,7 +553,7 @@ int Boolean(int choice) {
             cout << "Число " << a << " не является нечетным" << endl;
         }
         break;
-    case 39:
+    case 43:
         //boolean 3
         cout << "A: ";
         cin >> a;
@@ -520,7 +565,7 @@ int Boolean(int choice) {
             cout << "Число " << a << " не является четным" << endl;
         }
         break;
-    case 40:
+    case 44:
         //boolean 4
         cout << "A: ";
         cin >> a;
@@ -534,7 +579,7 @@ int Boolean(int choice) {
             cout << "false" << endl;
         }
         break;
-    case 41:
+    case 45:
         //boolean 5
         cout << "A: ";
         cin >> a;
@@ -548,7 +593,7 @@ int Boolean(int choice) {
             cout << "false" << endl;
         }
         break;
-    case 42:
+    case 46:
         //boolean 6
         int c;
 
@@ -579,7 +624,7 @@ int If(int choice) {
     float A, B, C, X;
 
     switch (choice){
-    case 43:
+    case 47:
         //if 17
         cout << "A: ";
         cin >> A;
@@ -605,7 +650,7 @@ int If(int choice) {
         }
         cout << "A=" << A << "\nB=" << B << "\nC=" << C << endl;
         break;
-    case 44:
+    case 48:
         //if 18
         cout << "a: ";
         cin >> a;
@@ -630,7 +675,7 @@ int If(int choice) {
             cout << "Нету одинаковых чисел!" << endl;
         }
         break;
-    case 45:
+    case 49:
         //if 19
         cout << "a: ";
         cin >> a;
@@ -663,7 +708,7 @@ int If(int choice) {
             cout << "Ошибка! Введите корректные данные!" << endl;
         }
         break;
-    case 46:
+    case 50:
         //if 20
         cout << "a: ";
         cin >> a;
@@ -692,7 +737,7 @@ int If(int choice) {
 
         }
         break;
-    case 47:
+    case 51:
         //if 21
         cout << "x: ";
         cin >> x;
@@ -712,7 +757,7 @@ int If(int choice) {
             cout << "3" << endl;
         }
         break;
-    case 48:
+    case 52:
         //if 22
         cout << "x: ";
         cin >> x;
@@ -735,7 +780,7 @@ int If(int choice) {
             cout << "ошибка!" << endl;
         }
         break;
-    case 49:
+    case 53:
         //if 23
         int x2, y2, x3, y3;
         cout << "x1: ";
@@ -769,7 +814,7 @@ int If(int choice) {
             else
                 cout << "y4:" << y2 << endl;
         break;
-    case 50:
+    case 54:
         //if 24
         cout << "x: ";
         cin >> x;
@@ -781,7 +826,7 @@ int If(int choice) {
             cout << (6 - x) << endl;
         }
         break;
-    case 51:
+    case 55:
         //if 25
         cout << "x: ";
         cin >> x;
@@ -793,7 +838,7 @@ int If(int choice) {
             cout << -3 * x << endl;
         }
         break;
-    case 52:
+    case 56:
         //if 26
         cout << "x: ";
         cin >> x;
@@ -808,7 +853,7 @@ int If(int choice) {
             cout << "4" << endl;
         }
         break;
-    case 53:
+    case 57:
         //if 27
         cout << "x: ";
         cin >> X;
@@ -823,7 +868,7 @@ int If(int choice) {
             cout << "-1" << endl;
         }
         break;
-    case 54:
+    case 58:
         //if 28
         cout << "year: ";
         cin >> x;
@@ -835,7 +880,7 @@ int If(int choice) {
             cout << "365" << endl;
         }
         break;
-    case 55:
+    case 59:
         //if 29
         cout << "x: ";
         cin >> x;
@@ -860,7 +905,7 @@ int If(int choice) {
             cout << "Нулевое число" << endl;
         }
         break;
-    case 56:
+    case 60:
         //if 30
         cout << "x: ";
         cin >> x;
@@ -905,7 +950,7 @@ int Case(int choice) {
     float A, B;
     
     switch (choice){
-    case 57:
+    case 61:
         //case 1
         cout << "x: ";
         cin >> x;
@@ -939,7 +984,7 @@ int Case(int choice) {
         }
         break;
 
-    case 58:
+    case 62:
         //case 2
         cout << "K: ";
         cin >> x;
@@ -966,7 +1011,7 @@ int Case(int choice) {
         }
         break;
 
-    case 59:
+    case 63:
         //case 3
         cout << "M: ";
         cin >> x;
@@ -1014,7 +1059,7 @@ int Case(int choice) {
         }
 
         break;
-    case 60:
+    case 64:
         //case 4
         cout << "M: ";
         cin >> x;
@@ -1050,7 +1095,7 @@ int Case(int choice) {
         }
 
         break;
-    case 61:
+    case 65:
         //case 5
         cout << "N: ";
         cin >> n;
@@ -1078,7 +1123,7 @@ int Case(int choice) {
         }
 
         break;
-    case 62:
+    case 66:
         //case 6
         cout << "n: ";
         cin >> n;
@@ -1104,7 +1149,7 @@ int Case(int choice) {
         }
         break;
 
-    case 63:
+    case 67:
         //case 7
         cout << "n: ";
         cin >> n;
@@ -1130,7 +1175,7 @@ int Case(int choice) {
         }
         break;
 
-    case 64:
+    case 68:
         //case 8
         cout << "Введите день:";
         cin >> D;
@@ -1186,7 +1231,7 @@ int Case(int choice) {
         cout << "Предыдущая дата: " << D << "." << M << endl;
         break;
 
-    case 65:
+    case 69:
         //case 9
         cout << "D: ";
         cin >> D;
@@ -1253,7 +1298,7 @@ int For(int choice) {
     float n, a, fbuffer;
 
     switch (choice) {
-    case 66:
+    case 70:
         //for 1
         cout << "K: ";
         cin >> K;
@@ -1265,7 +1310,7 @@ int For(int choice) {
         }
         break;
 
-    case 67:
+    case 71:
         //for 2
         cout << "A: ";
         cin >> A;
@@ -1279,21 +1324,21 @@ int For(int choice) {
         cout << "N = " << buffer << endl;
         break;
 
-    case 68:
+    case 72:
         //for 3
         cout << "A: ";
         cin >> A;
         cout << "B: ";
         cin >> B;
 
-        for (int i = B - 1; i >> A; i--) {
+        for (int i = B - 1; i > A; i--) {
             cout << i << endl;
             buffer += 1;
         }
         cout << "N = " << buffer << endl;
         break;
 
-    case 69:
+    case 73:
         //for 4
         cout << "Цена: ";
         cin >> n;
@@ -1303,7 +1348,7 @@ int For(int choice) {
         }
         break;
 
-    case 70:
+    case 74:
         //for 5
         cout << "Цена: ";
         cin >> n;
@@ -1313,7 +1358,7 @@ int For(int choice) {
         }
         break;
 
-    case 71:
+    case 75:
         //for 6
         cout << "Цена: ";
         cin >> n;
@@ -1323,7 +1368,7 @@ int For(int choice) {
         }
         break;
 
-    case 72:
+    case 76:
         //for 7
         cout << "A: ";
         cin >> A;
@@ -1336,7 +1381,7 @@ int For(int choice) {
         cout << buffer << endl;
         break;
 
-    case 73:
+    case 77:
         //for 8
         cout << "A: ";
         cin >> A;
@@ -1349,7 +1394,7 @@ int For(int choice) {
         }
         cout << buffer << endl;
         break;
-    case 74:
+    case 78:
         //for 9
         cout << "A: ";
         cin >> A;
@@ -1362,7 +1407,7 @@ int For(int choice) {
         cout << buffer << endl;
         break;
 
-    case 75:
+    case 79:
         //for 10
         cout << "N: ";
         cin >> N;
@@ -1374,7 +1419,7 @@ int For(int choice) {
         cout << n << endl;
         break;
 
-    case 76:
+    case 80:
         //for 11
         cout << "N: ";
         cin >> N;
@@ -1387,7 +1432,7 @@ int For(int choice) {
         cout << buffer << endl;
         break;
 
-    case 77:
+    case 81:
         //for 12
 
         cout << "N: ";
@@ -1399,7 +1444,7 @@ int For(int choice) {
         cout << a << endl;
         break;
 
-    case 78:
+    case 82:
         //for 13
         cout << "n=";
         cin >> n;
@@ -1411,7 +1456,7 @@ int For(int choice) {
 
         break;
 
-    case 79:
+    case 83:
         //for 14
         cout << "N:";
         cin >> n;
@@ -1424,7 +1469,7 @@ int For(int choice) {
 
         break;
 
-    case 80:
+    case 84:
         //for 15
         cout << "N: ";
         cin >> n;
@@ -1437,7 +1482,7 @@ int For(int choice) {
         }cout << fbuffer << endl;
         break;
 
-    case 81:
+    case 85:
         //for 16
         cout << "A:";
         cin >> a;
@@ -1452,6 +1497,250 @@ int For(int choice) {
         break;
 
     default:
+        system("cls");
+        cout << "[*] Ошибка!" << endl;
+        break;
+    }
+    return 0;
+}
+
+//Цикл с условием
+int While(int choice) {
+
+    int a, b, c, d, k, n;
+    float rez, A, s, B, C;
+
+    switch (choice){
+    case 86:
+        //while 1
+        cout << "A:";
+        cin >> a;
+        cout << "B:";
+        cin >> b;
+
+        c = a;
+        while (c >= 0) {
+            c -= b;
+        }
+        cout << c + b << endl;
+        break;
+    case 87:
+        //while 2 
+        cout << "A:";
+        cin >> a;
+        cout << "B:";
+        cin >> b;
+
+        c = a;
+        d = 0;
+        while (c - b >= 0) {
+            c -= b;
+            ++d;
+        }
+        cout << d << endl;
+        break;
+
+    case 88:
+        //while 3
+        cout << "N:";
+        cin >> a;
+        cout << "K:";
+        cin >> b;
+
+        c = 0;
+        while (a >= b) {
+            a -= b;
+            ++c;
+        }
+        cout << c << endl;
+        cout << a << endl;
+        break;
+
+    case 89:
+        //while 4
+        cout << "A:";
+        cin >> a;
+
+        while (a > 0) { 
+            a -= 3;
+        }
+        if (a == 0) {
+            cout << "True" << endl;
+        }else {
+            cout << "False" << endl;
+        }
+
+        break;
+
+    case 90:
+        //while 5
+        cout << "N:";
+        cin >> a;
+
+        b = 0;
+        while (a >= 2) {
+            ++b;
+            a /= 2;
+        }
+        cout << b << endl;
+
+        break;
+
+    case 91:
+        //while 6
+        cout << "N:";
+        cin >> a;
+        
+        rez = 1;
+        while (a >= 2) {
+            rez *= a;
+            a -= 2;
+        }
+
+        cout << rez << endl;
+
+        break;
+
+    case 92:
+        //while 12
+        cout << "N:";
+        cin >> a;
+        
+        b = 0, c = 0;
+        while (!(c + b + 1 > a)) {
+            ++b;
+            c += b;
+        }
+        cout << b << endl;
+        cout << c << endl;
+
+        break;
+
+    case 93:
+        //while 13
+
+        cout << "A:";
+        cin >> A;
+        b = 0;
+        rez = 0;
+        while (rez <= a) {
+            ++b;
+            rez += 1 / (float)b;
+        }
+        cout << b << endl;
+        cout << rez << endl;
+        break;
+
+    case 94:
+        //while 14
+        cout << "A:";
+        cin >> A;
+
+        c = 0;
+        rez = 0;
+        while (rez <= A) {
+            ++c;
+            rez += 1 / (float)c;
+        }
+        cout << "K:" << c - 1 << endl;
+        cout << "N:" << rez - 1 / (float)c << endl;
+
+        break;
+
+    case 95:
+        //while 15
+
+        cout << "P:";
+        cin >> A;
+        c = 1;
+        s = 1000;
+        while (s <= 1100) {
+            ++c;
+            s += s * A / 100;
+        }
+        cout << "k:" << A << endl;
+        cout << "nS:" << s << endl;
+
+        break;
+
+    case 96:
+        //while 16
+        cout << "P:";
+        cin >> A;
+        k = 1;
+        B = 10, C = 10;
+        while (C <= 200) {
+            ++k;
+            B += B * A / 100;
+            C += B;
+        }
+        cout << "k: " << k << endl;
+        cout << "nS: " << C << endl;
+
+        break;
+
+    case 97:
+        //while 17
+
+        cout << "N:";
+        cin >> n;
+
+        while (n > 0) {
+            cout << n % 10 << " ";
+            n /= 10;
+        }
+        cout << "" << endl;
+
+        break;
+
+    case 98:
+        //while 18
+        cout << "N:";
+        cin >> n;
+
+        a = 0, b = 0;
+
+        while (n > 0) {
+            ++b;
+            a += n % 10;
+            n /= 10;
+        }
+        cout << "Number: " << b << endl;
+        cout << "Sum: " << a << endl;
+
+        break;
+    case 99:
+        //while 19
+        cout << "N: ";
+        cin >> n;
+
+        a = 0;
+        while (n > 0) {
+            int M = n % 10;
+            a = a * 10 + M;
+            n /= 10;
+        }
+        cout << a << endl;
+
+        break;
+
+    case 100:
+        //while 20
+        cout << "N: ";
+        cin >> n;
+
+        while ((n > 0) & ((n % 10) != 2)) {
+            n /= 10;
+        }
+        if ((n > 0) && (n % 10) == 2)
+            cout << "True";
+        else
+            cout << "False";
+        break;
+
+    default:
+        system("cls");
+        cout << "[*] Ошибка!" << endl;
         break;
     }
 
