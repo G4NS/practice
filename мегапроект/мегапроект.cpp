@@ -145,7 +145,6 @@ int Begin(int choice) {
 
         cout << "a = ";
         cin >> a;
-        // Berilgen S = a ** 3 degenimiz a ni biz cubtaimiz sol ushn 3ti cubtaimiz
 
         V = pow(a, 3);
         S = 6 * pow(a, 2);
@@ -189,8 +188,8 @@ int Begin(int choice) {
         cout << "b = ";
         cin >> b;
 
-        s = (a * b) / 2;
-        cout << s << endl;
+        SS = (a * b) / 2;
+        cout << SS << endl;
         break;
     case 9:
         //begin 9
@@ -247,7 +246,8 @@ int Begin(int choice) {
 
 //Целые числа
 int Integer(int choice) {
-    int a, b, n, L, M, byte, num, k;
+    int A, B, C;
+    int a, b, c, n, L, M, byte, num, k;
     switch (choice) {
     case 11:
         //integer 1
@@ -456,11 +456,12 @@ int Integer(int choice) {
 
     case 35:
         //integer25
+
         cout << "K: ";
-        cin >> b;
+        cin >> k;
         cout << endl;
 
-        a = (b + 3) % 7;
+        a = (k + 3) % 7;
         cout << a << endl;
 
         break;
@@ -526,7 +527,7 @@ int Integer(int choice) {
 
 //Логические выражения
 int Boolean(int choice) {
-    int a, b;
+    int a, b, c;
 
     switch (choice) {
     case 41:
@@ -595,7 +596,6 @@ int Boolean(int choice) {
         break;
     case 46:
         //boolean 6
-        int c;
 
         cout << "A: ";
         cin >> a;
@@ -610,6 +610,7 @@ int Boolean(int choice) {
         else {
             cout << "false" << endl;
         }
+        break;
 
     default:
         system("cls");
@@ -1307,6 +1308,7 @@ int For(int choice) {
 
         for (int i = 1; i <= N; i++) {
             cout << i << ". " << K << endl;
+
         }
         break;
 
@@ -1620,7 +1622,7 @@ int While(int choice) {
         //while 13
 
         cout << "A:";
-        cin >> A;
+        cin >> a;
         b = 0;
         rez = 0;
         while (rez <= a) {
@@ -1733,9 +1735,9 @@ int While(int choice) {
             n /= 10;
         }
         if ((n > 0) && (n % 10) == 2)
-            cout << "True";
+            cout << "True" << endl;
         else
-            cout << "False";
+            cout << "False" << endl;
         break;
 
     default:
